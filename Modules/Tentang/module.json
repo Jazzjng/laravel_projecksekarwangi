@@ -1,0 +1,13 @@
+{
+    "name": "Tentang",
+    "alias": "tentang",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Tentang\\Providers\\TentangServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
