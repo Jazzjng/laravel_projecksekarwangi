@@ -2,5 +2,7 @@
     "Home": true,
     "Informasi": true,
     "Tetang": true,
-    "Tentang": true
+    "Tentang": true,
+    "Kontak": true,
+    "Pelayanan": true
 }

@@ -7,7 +7,6 @@
         <div class="vertical-align-middle auth-main">
             <div class="auth-box">
                 <div class="top">
-                    
                     <img style="width:230px;" src="{{asset('images/logo/logorsudskwpuitih.png')}}">
                 </div>
                 <div class="card">

@@ -12,15 +12,14 @@ use Response;
 
 class InformasiController extends Controller
 {
-    public function __construct()
+  public function __construct()
 	{
 		$this->middleware('auth');
 	}
 
 	public function index(Request $request)
 	{
-		$qs = $request->segment(1).' / '.$request->segment(2);
-		return view('informasi::informasi', ['qs'=>$qs]);
+		return view('informasi::informasi');
 	}
 
 	public function getInformasi(Request $request)
@@ -34,7 +33,7 @@ class InformasiController extends Controller
 				if (empty($data->image)) {
 					return '';
 				}
-				return '<img src="http://127.0.0.1:808/public/images/blog/'.$data->image.'" width="50px" height="50px">';
+				return '<img src="/images/blog/'.$data->image.'" width="50px" height="50px">';
 			})
 
 			->addColumn('action', 'informasi::informasi-action')
@@ -62,9 +61,9 @@ class InformasiController extends Controller
 
 		if ($files = $request->file('image')) {
 
-			\File::delete('public/images/blog/' . $request->hidden_image);
+			\File::delete('images/blog/' . $request->hidden_image);
 			//image path
-			$destinationPath = 'public/images/blog/';
+			$destinationPath = 'images/blog/';
 			$profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
 			$files->move($destinationPath, $profileImage);
 			$details['image'] = "$profileImage";
@@ -85,7 +84,7 @@ class InformasiController extends Controller
 	public function destroy($id)
 	{
 		$data = InformasiT::where('informasi_id', $id)->first(['image']);
-		\File::delete('public/images/blog/' . $data->image);
+		\File::delete('images/blog/' . $data->image);
 		$informasi = InformasiT::where('informasi_id', $id)->delete();
 
 		return Response::json($informasi);

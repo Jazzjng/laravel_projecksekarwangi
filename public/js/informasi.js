@@ -127,8 +127,7 @@ function editInformasi(id) {
         $('.summernote').summernote('code', data.isi);
         $('#modal-preview').attr('alt', 'No image available');
         if (data.image) {
-            $('#modal-preview').attr('src', SITEURL + 'public/images/blog/' + data.image);
-            $('#hidden_image').attr('src', SITEURL + 'public/images/blog/' + data.image);
+            $('#hidden_image').val(data.image);
         }
     });
 }
@@ -164,4 +163,16 @@ function deleteInformasi(informasi_id) {
     });
 
 }
+
+$(function () {
+    $('select').each(function () {
+      $(this).select2({
+        theme: 'bootstrap4',
+        width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+        placeholder: $(this).data('placeholder'),
+        allowClear: Boolean($(this).data('allow-clear')),
+        closeOnSelect: !$(this).attr('multiple'),
+      });
+    });
+  });
 

@@ -1,0 +1,13 @@
+{
+    "name": "Pelayanan",
+    "alias": "pelayanan",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Pelayanan\\Providers\\PelayananServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

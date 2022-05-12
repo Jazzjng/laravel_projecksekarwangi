@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-<title>@yield('title')</title>
+<title> @yield('title')</title>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
 <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
 
-{{-- <link rel="icon" href="favicon.ico" type="image/x-icon"> --}}
+<link rel="icon" href="{{asset('images/logo/logo.svg')}}" type="image/x-icon">
 
 <!-- VENDOR CSS -->
 <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
@@ -22,7 +22,11 @@
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="{{asset('css/main.css')}}">
 <link rel="stylesheet" href="{{asset('css/color_skins.css')}}">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- select2-bootstrap4-theme -->
+<link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/select2.css')}}">
+
 
 {{-- DATA TABLES --}}
 <link rel="stylesheet" href="{{asset('vendor/jquery-datatable/dataTables.bootstrap4.min.css')}}">
@@ -40,9 +44,7 @@
                         <div class="col-lg-6 col-md-8 col-sm-12">
                             <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a>@yield('title')</h2>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/home"><i class="icon-home"></i></a></li>                            
-                                <li class="breadcrumb-item">@yield('head')</li>
-                                
+                                <li class="breadcrumb-item" id="halaman"><a href="/home"><i class="icon-home"></i></a> /@yield('head')</p></li>
                             </ul>
                         </div>            
                         <div class="col-lg-6 col-md-4 col-sm-12 text-right">
@@ -87,8 +89,8 @@
 
 {{-- PLUGIN --}}
 <script src="https://embed.tawk.to/_s/v4/app/623db459d04/js/twk-main.js" charset="UTF-8" crossorigin="*"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-{{-- <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script> --}}
+<script src="{{asset('bundles/select2.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
 
 {{-- CUSTOM JS --}}

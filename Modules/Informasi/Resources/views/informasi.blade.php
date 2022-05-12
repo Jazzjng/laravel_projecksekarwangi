@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Informasi')
-@section('head', $qs)
+@section('head', ' tentang / informasi')
 @section('content')
-
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12">
@@ -53,8 +52,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="javascript:void(0)" id="informasiform" name="informasiform" class="needs-validation" novalidate
-                    method="POST" enctype="multipart/form-data">
+                <form action="javascript:void(0)" id="informasiform" name="informasiform" class="needs-validation"
+                    novalidate method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <input type="hidden" name="informasi_id" id="informasi_id">
                         <div class="form-group">
@@ -103,7 +102,7 @@
 @endsection
 
 @push('head')
-    <link rel="stylesheet" href="{{'/vendor/summernote/dist/summernote.css' }}" />
+    <link rel="stylesheet" href="{{ '/vendor/summernote/dist/summernote.css' }}" />
 @endpush
 
 @push('script')

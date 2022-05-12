@@ -5,14 +5,14 @@
         </div>
 
         <div class="navbar-brand">
-            <a href="/home"><img src="{{asset('images/logo/logo.svg')}}" alt="Lucid Logo" style="width: 28px;" class="img-responsive logo"></a> Sekarwangi               
+            <a href="/home" style="color: #4b4a4a;"><img src="{{asset('images/logo/logo.svg')}}" alt="Lucid Logo" class="img-responsive logo" >| RSUD Sekarwangi</a>              
         </div>
         
         <div class="navbar-right">
-            <form id="navbar-search" class="navbar-form search-form">
-                <input value="" class="form-control" placeholder="Search here..." type="text">
+            {{-- <form id="navbar-search" action="javascript:void(0)" method="POST" class="navbar-form search-form">
+                <input id="search" class="form-control" placeholder="Search here..." type="text">
                 <button type="button" class="btn btn-default"><i class="icon-magnifier"></i></button>
-            </form>                
+            </form>                 --}}
 
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
@@ -101,7 +101,7 @@
                             <li><a href="javascript:void(0);"><i class="icon-refresh"></i> <span>Renewals</span></a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li title="Logout">
                         <a class="icon-menu" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="icon-login"></i>
                         </a>
@@ -169,19 +169,24 @@
                     <ul class="main-menu metismenu">
                         <li class="{{ (request()->is('home')) ? 'active' : '' }}"><a href="/home"><i class="icon-home"></i><span>Dashboard</span></a></li>
                         <li class="{{ (request()->segment(1) == 'informasi') ? 'active' : '' }}"><a href="/informasi/informasi"><i class="icon-note"></i><span>Informasi</span> </a></li>
-                        <li class="{{ (request()->segment(1) == 'tentang') ? 'active' : '' }}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-layers"></i><span>Tentang</span> </a>
+                        <li class="{{ (request()->segment(1) == 'tentang') ? 'active' : '' }}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-list"></i><span>Tentang</span> </a>
                             <ul>
                                 <li class="{{ (request()->segment(2) == 'sejarah') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'sejarah') ? '' : '/tentang/sejarah' }}">Sejarah</a></li>
                                 <li class="{{ (request()->segment(2) == 'profil') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'profil') ? '' : '/tentang/profil' }}">Profil</a></li>
-                                <li class="{{ (request()->segment(2) == 'visi') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'visi') ? '' : 'tentang/visi' }}">Visi Misi</a></li>
-                                <li class="{{ (request()->segment(2) == 'dokter') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'dokter') ? '' : 'tentang/dokter' }}">Dokter</a></li>
-                                <li class="{{ (request()->segment(2) == 'denah') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'denah') ? '' : 'tentang/denah' }}">Denah Lokasi</a></li>
-                                <li class="{{ (request()->segment(2) == 'galeri') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'galeri') ? '' : 'tentang/galeri' }}">Galeri</a></li>
-                                <li class="{{ (request()->segment(2) == 'ikm') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'ikm') ? '' : 'tentang/ikm' }}">Kepuasan Masyarakat</a></li>
-
+                                <li class="{{ (request()->segment(2) == 'visimisi') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'visimisi') ? '' : '/tentang/visimisi' }}">Visi Misi</a></li>
+                                <li class="{{ (request()->segment(2) == 'dokter') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'dokter') ? '' : '/tentang/dokter' }}">Dokter</a></li>
+                                <li class="{{ (request()->segment(2) == 'galeri') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'galeri') ? '' : '/tentang/galeri' }}">Galeri</a></li>
                             </ul>
                         </li>
-                       
+                        <li class="{{ (request()->segment(1) == 'pelayanan') ? 'active' : '' }}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-layers"></i><span>Pelayanan</span> </a>
+                            <ul>
+                                <li class="{{ (request()->segment(2) == 'add') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'add') ? '' : '/pelayanan/add' }}">Add Pelayanan</a></li>
+                                <li class="{{ (request()->segment(2) == 'rawatjalan') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'rawatjalan') ? '' : '/pelayanan/rawatjalan' }}">Rawat Jalan</a></li>
+                                <li class="{{ (request()->segment(2) == 'igd') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'igd') ? '' : '/pelayanan/igd' }}">IGD (Rawat Darurat)</a></li>
+                                <li class="{{ (request()->segment(2) == 'rawatinap') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'rawatinap') ? '' : '/pelayanan/rawatinap' }}">Rawat Inap</a></li>
+                                <li class="{{ (request()->segment(2) == 'penunjang') ? 'active' : '' }}"><a href="{{ (request()->segment(2) == 'penunjang') ? '' : '/pelayanan/penunjang' }}">Penunjang</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -260,14 +265,7 @@
                 </nav>
             </div>
             <div class="tab-pane p-l-15 p-r-15" id="Chat">
-                <form>
-                    <div class="input-group m-b-20">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" ><i class="icon-magnifier"></i></span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </div>
-                </form>
+                
                 <ul class="right_chat list-unstyled">
                     <li class="online">
                         <a href="javascript:void(0);">
