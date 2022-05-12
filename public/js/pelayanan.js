@@ -1,4 +1,4 @@
-var hal = $("#halaman").text().replace(/\s/g, "");
+var hal = $("#halamujangan").text().replace(/\s/g, "");
 $(function () {
     $("select").each(function () {
         $(this).select2({
