@@ -111,7 +111,7 @@ function destroy(id) {
     swal(
         {
             title: "Hapus?",
-            text: "Anda yakin akan menghapus data ini ?",
+            text: "Anda yakin akan menghapus data pelayanan ini ?",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
