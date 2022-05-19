@@ -95,11 +95,10 @@ function update(id) {
     $.get("update/" + id, function (data) {
         $("#modal").modal("show");
         $("#id_pelayanan").val(data.id_pelayanan);
-        $("#nama_pelayanan").val(data.nama_pelayanan);
-        $("select[name='nama_pelayanan']").val(data.nama_pelayanan);
-        $("#select[name='id_kategoripel']").val(data.id_kategoripel);
-        $("#select[name='id_dokter]").val(data.id_dokter);
-        $("#select[name='image']").val(data.image);
+        $("input[name=nama_pelayanan]").val(data.nama_pelayanan);
+        $("select[name=id_kategoripel]").val(data.id_kategoripel).trigger("change");
+        $("select[name=id_dokter]").val(data.id_dokter).trigger("change");
+        $("input[name=hidden_image]").val(data.image);
         $(".summernote").summernote("code", data.keterangan);
         if (data.image) {
             $("#hidden_image").val(data.image);

@@ -20,30 +20,36 @@ class PelayananController extends Controller
 		$this->middleware('auth');
 	}
 
-
     public function rawatJalan(Request $request)
     {
+        $katpelayanan = Kategoripelayanan::all();
+        $dokter = Dokter::where('status', true)->get();
         $data = Pelayanan::where('id_kategoripel', 1)->get();
-        return view('pelayanan::rawatJalan', ['data'=>$data]);
+        return view('pelayanan::rawatJalan', ['data'=>$data, 'katpelayanan'=>$katpelayanan,'dokter'=>$dokter]);
     }
 
     public function igd(Request $request)
     {
+        $katpelayanan = Kategoripelayanan::all();
+        $dokter = Dokter::where('status', true)->get();
         $data = Pelayanan::where('id_kategoripel', 2)->get();
-        return view('pelayanan::igd', ['data'=>$data]);
+        return view('pelayanan::igd', ['data'=>$data, 'katpelayanan'=>$katpelayanan,'dokter'=>$dokter]);
     }
 
     public function rawatinap(Request $request)
     {
+        $katpelayanan = Kategoripelayanan::all();
+        $dokter = Dokter::where('status', true)->get();
         $data = Pelayanan::where('id_kategoripel', 3)->get();
-        return view('pelayanan::igd', ['data'=>$data]);
+        return view('pelayanan::igd', ['data'=>$data, 'katpelayanan'=>$katpelayanan,'dokter'=>$dokter]);
     }
-
 
     public function penunjang(Request $request)
     {
+        $katpelayanan = Kategoripelayanan::all();
+        $dokter = Dokter::where('status', true)->get();
         $data = Pelayanan::where('id_kategoripel', 4)->get();
-        return view('pelayanan::igd', ['data'=>$data]);
+        return view('pelayanan::igd', ['data'=>$data, 'katpelayanan'=>$katpelayanan,'dokter'=>$dokter]);
     }
 
     public function addpelayanan(Request $request)
@@ -96,7 +102,7 @@ class PelayananController extends Controller
     public function update(Request $request, $id)
     {
         $data  = array('id_pelayanan' => $id);
-        $pelayanan = Pelayanan::where($data);
+        $pelayanan = Pelayanan::where($data)->first();
 
         return Response::json($pelayanan);
     }

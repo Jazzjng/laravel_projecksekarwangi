@@ -21,17 +21,17 @@
                 </div>
             </div>
         </div>
-
     @endforeach
 </div>
-@include('layouts.update')
+@include('pelayanan::update')
 @endsection
-
 @push('head')
-    <link rel="stylesheet" href="{{ '/vendor/summernote/dist/summernote.css' }}" />
+    <link rel="stylesheet" href="{{asset('/vendor/dropify/css/dropify.min.css') }}">
+    <link rel="stylesheet" href="{{asset('/vendor/summernote/dist/summernote.css')}}" />
 @endpush
-
 @push('script')
+    <script src="{{asset('/vendor/dropify/js/dropify.min.js')}}"></script>
+    <script src="{{asset('js/pages/forms/dropify.js')}}"></script>
     <script src="{{ asset('/vendor/summernote/dist/summernote.js') }}"></script>
-    <script src="{{ asset('/js/pelayanan.js') }}"></script>
+    <script src="{{asset('/js/pelayanan.js') }}"></script>
 @endpush

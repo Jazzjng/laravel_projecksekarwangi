@@ -1,15 +1,16 @@
-<div class="modal fade bd-example-modal-xl" id="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class='modal-title' id='modal'>Edit Pelayanan</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+    <div class="modal fade bd-example-modal-xl" id="modal" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class='modal-title' id='modal'>Edit Pelayanan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             <form action="javascript:void(0)" id="form" class="needs-validation" method="POST"
                 enctype="multipart/form-data" novalidate>
+                <div class="modal-body">
                 <div class="row clearfix">
                     <div class="col-md-6">
                         <input type="hidden" id="id_pelayanan" name="id_pelayanan">
@@ -69,6 +70,8 @@
                     </div>
                 </div>
             </form>
+            </div>
         </div>
     </div>
 </div>
+

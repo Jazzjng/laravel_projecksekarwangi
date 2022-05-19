@@ -23,7 +23,7 @@ Route::prefix('pelayanan')->group(function() {
     Route::post('/save', 'PelayananController@store');
 
     //Update
-    Route::get('/update/{id}','PelayananController@update');
+    Route::get('update/{id}','PelayananController@update');
     //Delete
     Route::get('delete/{id}', 'PelayananController@destroy');
 
