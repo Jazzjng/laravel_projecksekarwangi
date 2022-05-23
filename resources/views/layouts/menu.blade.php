@@ -5,9 +5,9 @@
         </div>
 
         <div class="navbar-brand">
-            <a href="/home" style="color: #4b4a4a;"><img src="{{asset('images/logo/logo.svg')}}" alt="Lucid Logo" class="img-responsive logo" >| RSUD Sekarwangi</a>              
+            <a href="/home" style="color: #4b4a4a;"><img src="{{asset('images/logo/logo.svg')}}" alt="Lucid Logo" class="img-responsive logo" >| RSUD Sekarwangi</a>
         </div>
-        
+
         <div class="navbar-right">
             {{-- <form id="navbar-search" action="javascript:void(0)" method="POST" class="navbar-form search-form">
                 <input id="search" class="form-control" placeholder="Search here..." type="text">
@@ -44,7 +44,7 @@
                                         </div>
                                     </div>
                                 </a>
-                            </li>                               
+                            </li>
                             <li>
                                 <a href="javascript:void(0);">
                                     <div class="media">
@@ -97,7 +97,7 @@
                             <li><a href="javascript:void(0);"><i class="icon-bell"></i> <span>Notifications</span></a></li>
                             <li class="menu-heading">BILLING</li>
                             <li><a href="javascript:void(0);"><i class="icon-credit-card"></i> <span>Payments</span></a></li>
-                            <li><a href="javascript:void(0);"><i class="icon-printer"></i> <span>Invoices</span></a></li>                                
+                            <li><a href="javascript:void(0);"><i class="icon-printer"></i> <span>Invoices</span></a></li>
                             <li><a href="javascript:void(0);"><i class="icon-refresh"></i> <span>Renewals</span></a></li>
                         </ul>
                     </li>
@@ -105,7 +105,7 @@
                         <a class="icon-menu" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="icon-login"></i>
                         </a>
-                
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
@@ -131,7 +131,7 @@
                     <li><a class="icon-menu" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="icon-power"></i> Logout
                         </a>
-                
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
@@ -156,12 +156,12 @@
         </div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu</a></li>                
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i class="icon-grid"></i></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat"><i class="icon-book-open"></i></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="icon-settings"></i></a></li>                
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu</a></li>
+            {{-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i class="icon-grid"></i></a></li> --}}
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#wbsSystem"><i class="icon-book-open"></i></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="icon-settings"></i></a></li>
         </ul>
-            
+
         <!-- Tab panes -->
         <div class="tab-content p-l-0 p-r-0">
             <div class="tab-pane active" id="menu">
@@ -203,7 +203,7 @@
                                 <li><a href="ui-icons.html">Icons</a></li>
                                 <li><a href="ui-notifications.html">Notifications</a></li>
                                 <li><a href="ui-colors.html">Colors</a></li>
-                                <li><a href="ui-dialogs.html">Dialogs</a></li>                                    
+                                <li><a href="ui-dialogs.html">Dialogs</a></li>
                                 <li><a href="ui-list-group.html">List Group</a></li>
                                 <li><a href="ui-media-object.html">Media Object</a></li>
                                 <li><a href="ui-modals.html">Modals</a></li>
@@ -212,15 +212,15 @@
                                 <li><a href="ui-range-sliders.html">Range Sliders</a></li>
                                 <li><a href="ui-treeview.html">Treeview</a></li>
                             </ul>
-                        </li>                            
+                        </li>
                         <li>
                             <a href="#forms" class="has-arrow"><i class="icon-pencil"></i> <span>Forms</span></a>
                             <ul>
                                 <li><a href="forms-validation.html">Form Validation</a></li>
                                 <li><a href="forms-advanced.html">Advanced Elements</a></li>
                                 <li><a href="forms-basic.html">Basic Elements</a></li>
-                                <li><a href="forms-wizard.html">Form Wizard</a></li>                                    
-                                <li><a href="forms-dragdropupload.html">Drag &amp; Drop Upload</a></li>                                    
+                                <li><a href="forms-wizard.html">Form Wizard</a></li>
+                                <li><a href="forms-dragdropupload.html">Drag &amp; Drop Upload</a></li>
                                 <li><a href="forms-cropping.html">Image Cropping</a></li>
                                 <li><a href="forms-summernote.html">Summernote</a></li>
                                 <li><a href="forms-editors.html">CKEditor</a></li>
@@ -245,8 +245,8 @@
                                 <li><a href="chart-e.html">E Charts</a> </li>
                                 <li><a href="chart-morris.html">Morris</a> </li>
                                 <li><a href="chart-flot.html">Flot</a> </li>
-                                <li><a href="chart-chartjs.html">ChartJS</a> </li>                                    
-                                <li><a href="chart-jquery-knob.html">Jquery Knob</a> </li>                                        
+                                <li><a href="chart-chartjs.html">ChartJS</a> </li>
+                                <li><a href="chart-jquery-knob.html">Jquery Knob</a> </li>
                                 <li><a href="chart-sparkline.html">Sparkline Chart</a></li>
                                 <li><a href="chart-peity.html">Peity</a></li>
                                 <li><a href="chart-c3.html">C3 Charts</a></li>
@@ -264,8 +264,8 @@
                     </ul>
                 </nav>
             </div>
-            <div class="tab-pane p-l-15 p-r-15" id="Chat">
-                
+            <div class="tab-pane p-l-15 p-r-15" id="wbsSystem">
+
                 <ul class="right_chat list-unstyled">
                     <li class="online">
                         <a href="javascript:void(0);">
@@ -277,7 +277,7 @@
                                     <span class="badge badge-outline status"></span>
                                 </div>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li class="online">
                         <a href="javascript:void(0);">
@@ -289,7 +289,7 @@
                                     <span class="badge badge-outline status"></span>
                                 </div>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li class="offline">
                         <a href="javascript:void(0);">
@@ -301,7 +301,7 @@
                                     <span class="badge badge-outline status"></span>
                                 </div>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li class="offline">
                         <a href="javascript:void(0);">
@@ -313,7 +313,7 @@
                                     <span class="badge badge-outline status"></span>
                                 </div>
                             </div>
-                        </a>                            
+                        </a>
                     </li>
                     <li class="online">
                         <a href="javascript:void(0);">
@@ -325,8 +325,8 @@
                                     <span class="badge badge-outline status"></span>
                                 </div>
                             </div>
-                        </a>                            
-                    </li>                        
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="tab-pane p-l-15 p-r-15" id="setting">
@@ -335,7 +335,7 @@
                     <li data-theme="purple">
                         <div class="purple"></div>
                         <span>Purple</span>
-                    </li>                   
+                    </li>
                     <li data-theme="blue">
                         <div class="blue"></div>
                         <span>Blue</span>
@@ -376,7 +376,7 @@
                         <label class="fancy-checkbox">
                             <input type="checkbox" name="checkbox" checked>
                             <span>Notifications</span>
-                        </label>                      
+                        </label>
                     </li>
                     <li>
                         <label class="fancy-checkbox">
@@ -397,7 +397,7 @@
                         </label>
                     </li>
                 </ul>
-            </div>             
-        </div>          
+            </div>
+        </div>
     </div>
 </div>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DefaultController;
+use App\Http\Controllers\WbsSytemController;
+
 
 
 /*
@@ -18,6 +21,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+
+
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [DefaultController::class, 'index']);
+Route::get('/wbs_system', [WbsSytemController::class, 'wbsSystem']);
 

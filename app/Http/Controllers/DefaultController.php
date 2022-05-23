@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\WbsSystem;
 
-class HomeController extends Controller
+class DefaultController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,6 +27,13 @@ class HomeController extends Controller
         $qs = $request->segment(1,2);
 
         return view('home', ['qs' => $qs]);
-        
+
+    }
+
+    public function wbsSystem(Request $request)
+    {
+        $daftar_wbs = WbsSystem::all();
+        return view('wbs_system', ['daftar_wbs'=>$daftar_wbs]);
+
     }
 }
